@@ -1,0 +1,23 @@
+{
+  "name": "swap.dev-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "npm start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbchinonso/swap.dev-Api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbchinonso/swap.dev-Api/issues"
+  },
+  "homepage": "https://github.com/jbchinonso/swap.dev-Api#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
