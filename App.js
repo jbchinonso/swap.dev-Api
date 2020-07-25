@@ -20,7 +20,7 @@ class User{
 
 // HTTP Request Using the Fecth Api
 const members = () =>{
-    fetch('https://cors-anywhere.herokuapp.com/https://swapi.dev/api/people')
+    fetch('https://swapi.dev/api/people/')
     .then(response => response.json())
     .then(data => populate(data.results))
     .catch(err => console.log(err))
