@@ -19,7 +19,7 @@ class User{
 
 // HTTP Request Using the Fecth Api
 const members = () =>{
-    fetch('https://swapi.dev/api/people')
+    fetch('https://cors-anywhere.herokuapp.com/https://swapi.dev/api/people')
     .then(response => response.json())
     .then(data => populate(data.results))
     .catch(err => console.log(err))
@@ -32,7 +32,7 @@ const populate = (data)=>{
         warriors.innerHTML += 
         `<div class="warrior-cabin" id = ${index} data-height = ${element.height} data-gender = ${element.gender} onclick='displayInfo(${index})'>
         <div class="warrior">
-          <img src="./images/warrior.jpg" />
+          <img src="./images/warrior${index}.jpg" />
         </div>
         <p>${element.name}</p>
       </div>`
