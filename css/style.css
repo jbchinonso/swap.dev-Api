@@ -47,6 +47,7 @@ body {
   right: 0;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
 }
 .close {
   height: 50px;
@@ -78,11 +79,25 @@ body {
 }
 
 .modal-header {
-  width: 100%;
+  width: 95.8%;
+  margin: 0 auto;
   padding: 15px;
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-size: larger;
+  color: #ffffff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: #e62929;
+}
+
+.warrior-detail{
+    padding: 10px;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
 }
 
 .header {
