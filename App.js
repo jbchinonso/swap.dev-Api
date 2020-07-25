@@ -1,5 +1,6 @@
 class User{
-    constructor(name, height, gender){
+    constructor(id,name, height, gender){
+        this.id = id;
         this.name = name;
         this.height = height;
         this.gender = gender;
@@ -8,10 +9,10 @@ class User{
 
     ShowDetail(){
         const modal = document.getElementById('modal');
-        this.userDetail.innerHTML = `<p>Name : ${this.name}</p>
+        this.userDetail.innerHTML = `<div><p>Name : ${this.name}</p>
         <p>Height : ${this.height}</p>
-        <p>Gender : ${this.gender}</p>`;
-
+        <p>Gender : ${this.gender}</p></div>
+        <div class ="round"><img src="./images/warrior${this.id}.jpg" /></div`;
         modal.style.visibility = 'visible';
          
     }
@@ -58,6 +59,6 @@ const displayInfo = (id)=>{
     const name = fighter.textContent;
     const height = fighter.getAttribute('data-height');
     const gender = fighter.getAttribute('data-gender');
-    const user = new User(name, height, gender);
+    const user = new User(id,name, height, gender);
     user.ShowDetail();
 }
