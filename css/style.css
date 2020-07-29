@@ -183,7 +183,11 @@ footer{
     }
 
     .modal-content {
-        width: 80%;
+        width: 95%;
+    }
+
+    .warrior-detail{
+        justify-content: space-between;
     }
 
     footer{

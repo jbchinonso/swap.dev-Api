@@ -28,21 +28,21 @@ const members = () => {
     .catch((err) => console.log(err));
 };
 
+//global variable to hold User data
+let userData = {};
+
 // function to populate Frontend app with list of Users
 const populate = (data) => {
   const warriors = document.querySelector(".warriors");
   data.forEach((element, index) => {
-    warriors.innerHTML += `<div class="warrior-cabin" id = ${index} 
-    data-height = ${element.height} 
-    data-year = ${element.birth_year} 
-    data-gender = ${element.gender} 
-    onclick='displayInfo(${index})'>
+    warriors.innerHTML += `<div class="warrior-cabin" id = ${index} onclick='displayInfo(${index})'>
         <div class="warrior">
           <img src="./images/warrior${index}.jpg" />
         </div>
         <p>${element.name}</p>
       </div>`;
   });
+  Object.assign(userData, data);
 };
 members();
 
@@ -60,11 +60,7 @@ modal.addEventListener("click", (e) => {
 
 //show user information when username is clicked
 const displayInfo = (id) => {
-  const fighter = document.getElementById(id);
-  const name = fighter.textContent;
-  const height = fighter.getAttribute("data-height");
-  const age = fighter.getAttribute("data-year");
-  const gender = fighter.getAttribute("data-gender");
-  const user = new User(id, name, height, age, gender);
+  const { name, height, birth_year, gender } = userData[id];
+  const user = new User(id, name, height, birth_year, gender);
   user.ShowDetail();
 };
